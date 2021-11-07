@@ -1,0 +1,316 @@
+html,body {
+  font-family: monospace;
+  background: #141d2b;
+}
+
+/* css variables*/
+:root {
+  --accent-color: #1d7ec6;
+  --bg-color: #141d2b;
+}
+
+/* normalized */
+html, body {
+  padding: 0;
+  margin: 0;
+}
+a {
+  text-decoration: none;
+  color: #0095c2;
+  transition: all 0.2s ease-out;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+hr {
+  padding: 1rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--bg-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+
+.section__title {
+  color: #888;
+  font-weight: 700;
+  font-size: 35px;
+}
+
+.section__title a {
+  background: #1b273a;
+  font-size: 20px;
+  padding: 8px;
+}
+
+.section__title a:hover {
+  text-decoration: none;
+  background: #233047;
+}
+
+/* links */
+.link--dark {
+  text-decoration: none;
+  transition: all 0.3s ease-out;
+  color: #8e9bb9;
+}
+
+.link--dark:hover {
+  color: #a2b1d3;
+}
+
+
+/* menu */
+nav {
+  display: grid;
+  grid-template-columns: 70px auto;
+}
+
+.menu {
+  margin: 0;
+  text-align: right;
+  overflow: hidden;
+  list-style: none;
+}
+
+.toggle {
+  display: none;
+  position: relative;
+}
+
+.toggle span,
+.toggle span:before,
+.toggle span:after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  border-radius: 2px;
+  background: #7e8aa5;
+  display: block;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  right: 0;
+}
+
+.toggle span:before {
+  top: -6px;
+}
+
+.toggle span:after {
+  bottom: -6px;
+}
+
+.toggle.open span{
+  background-color: transparent;
+}
+
+.toggle.open span:before,
+.toggle.open span:after {
+  top: 0;
+}
+
+.toggle.open span:before {
+  transform: rotate(45deg);
+}
+
+.toggle.open span:after {
+  transform: rotate(-45deg);
+}
+
+.menu__item {
+  padding: 1rem;
+  display: inline-block;
+}
+
+.menu__item.toggle {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    grid-template-columns: 70px auto;
+  }
+
+  .menu__item{
+    display: none;
+  }
+
+  .menu__item.toggle {
+    display: inline-block;
+  }
+
+  .menu {
+    text-align: right;
+    padding: 0.5rem 1rem;
+  }
+
+  .toggle {
+    display: block;
+  }
+
+  .menu.responsive .menu__item:not(:first-child) {
+    display: block;
+    padding: 0 0 0.5rem 0;
+  }
+}
+
+/* layout */
+.wrapper {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.footer {
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 20px;
+}
+
+footer a {
+  color: var(--accent-color);
+  margin: 13px;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0,30px,0);
+  }
+  100% {
+    transform: translate3d(0,0,0);
+  }
+}
+
+.section__title {
+  color: #cad2e2;
+}
+p {
+  color: #7e8aa5;
+  font-weight: 500;
+  font-size: 18px;
+}
+b {
+  color: #8e9bb9;
+}
+nav a {
+  color: #8e9bb9;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+nav a:hover {
+  color: #a3b1d3;
+  text-decoration: none;
+}
+/* nav specialized to landing page */
+
+  
+  /* hero section */
+  .hero {
+    text-align: center;
+    padding: 2rem 0 10rem 0;
+    background: #141d2b;
+  }
+  
+  .hero__title {
+    font-weight: 900;
+    color: #cad2e2;
+  }
+  
+  .hero__description {
+    margin: -1rem auto 2rem auto;
+  }
+  
+  .hero__terminal {
+    width: 60%;
+    margin: -11rem auto 3rem auto;
+    text-align: left;
+    color: white;
+    padding: 0 1rem;
+    border-radius: 3px;
+    background-color: #1a2332;
+    min-height: 285px;
+    animation: fadeUp 2s;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero__terminal pre .demo {
+    white-space: pre-line;
+    padding-top: 1rem;
+    font-family: monospace;
+    background: transparent;
+  }
+  
+  /* feature section */
+  .feature {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .feature__item {
+    max-width: calc(33% - 20px);
+    margin: 0 20px 0 0;
+  }
+  
+  .feature__item .section__title {
+    margin-bottom: 0;
+  }
+  
+  .feature__item p {
+    margin-top: 0.5rem;
+  }
+  
+  
+  /* callout section */
+  .callout {
+    text-align: center;
+    padding: 1rem 0 3rem 0;
+  }
+  
+  /* changelog section */
+  .changelog {
+    padding: 2rem 0;
+    font-weight: 700;
+    font-size: 20px;
+    color: #7e8aa5;
+  }
+  
+  .changelog__item {
+    display: flex;
+  }
+  
+  .changelog__meta {
+    flex-basis: 25%;
+  }
+  
+  .changelog__meta small {
+    color: #919ebd;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+  
+  .changelog__title {
+    margin-bottom: 0;
+  }
+  
+.changelog__detail ul li {
+  font-weight: 400;
+  list-style: disc;
+}
+
+  @media (max-width: 750px) {
+    .hero__terminal {
+      width: 70%;
+    }
+    .feature, .changelog__item {
+      flex-direction: column;
+    }
+    .feature__item {
+      max-width: 100%;
+      margin: 0;
+    }
+  }
